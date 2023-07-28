@@ -1,28 +1,49 @@
-import React, { useState } from "react";
-import { Button } from 'react-bootstrap';
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Axios from "axios";
 
 
-function Joke(props){
-    
-  const [ show, setShow ] = useState(false);
+function Joke(){
+  
+  const [setup, setSetup] = React.useState("");
+  const [delivery, setDelivery] = React.useState("");
+  const [show, setShow] = React.useState(false);
 
-  function showAns(){
-    return <p>{ props.ans }</p>
+
+  function getJoke(){
+
+    Axios.get("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist&type=twopart")
+      .then((response) => {
+          setSetup(response.data.setup);
+          setDelivery(response.data.delivery);
+          setShow(false);
+        })
+      .catch((err)=>{
+        console.log(err);
+        alert("API error. Try again later");
+      })
+
   }
 
-  return <>
-    <div className="text-center" >
-      { props.ques }<br />
-      {show 
-          ? showAns()
-          : <Button onClick={() => {
-                                  setShow(true)
-                              }}>
-                              Because
-              </Button>}    
-    </div>
-  </>
+    return <>
+     <div className="card" style={{
+          width: 250}}>
+        <div className="card-body">
+          <button className="btn btn-primary"
+                onClick={ getJoke }>Programming Joke</button>
+          
+          <p className="card-text">{ setup } </p>
+
+          {!show
+            ?<button className="btn btn-primary" onClick={()=>{setShow(true)}} >Because</button>
+            : null}
+          {show
+            ?<p>{ delivery }</p>
+            : null}
+
+        </div>
+      </div>
+    </>
 };
 
 export default Joke;
