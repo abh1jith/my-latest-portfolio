@@ -1,0 +1,21 @@
+.name{
+    display: flex;
+    justify-content: center;
+}
+
+.link{
+    text-decoration: none;
+}
+
+p{
+    font-family: sans-serif;
+}
+
+#iframe{
+    display: block;
+    margin: auto;
+}
+
+#dsa{
+    cursor: pointer;
+}

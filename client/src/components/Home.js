@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
-import Axios from "axios";
-import { Button } from 'react-bootstrap';
+import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./Home.css";
 
 import Joke from "./elements/Joke";
 import Weather from "./weather/Weather";
 
 function Home(){
-
     return(
-    <body className="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column min-vh-100">
+    <div className="jumbotron">
+  <h1 className="display-3 name" >ABHIJITH DAMERUPPALA</h1>
+  </div>
          <h1>Home</h1>
         <Joke />
         <Weather />
-</body>);
+</div>);
 }
 
 export default Home;

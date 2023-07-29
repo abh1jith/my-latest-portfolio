@@ -16,7 +16,7 @@ function Weather(){
     const [showDetails, setShowDetails] = React.useState(false);
 
     function getWeatherData(){
-        Axios.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=API_KEY")
+        Axios.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid={API_KEY}")
         .then((response) => {
             setShowDetails(true);
             setCoord(response.data.coord);
@@ -33,10 +33,10 @@ function Weather(){
     return <> 
     <br />
     <br />
-    <div class="card" style={{
+    <div className="card" style={{
           width: 250}}>
-  <div class="card-body">
-    <h5 class="card-title">Know your weather</h5>
+  <div className="card-body">
+    <h5 className="card-title">Know your weather</h5>
     <input 
             name="cityName"
             placeholder="London"
@@ -55,13 +55,13 @@ function Weather(){
         {showDetails
         ? <><hr />
         <p className="card-text">
-            Location: { result.name  }, { result.sys.country }<br />
+            Country: { result.sys.country }<br />
+            <b>Weather: </b><em>{ weather[0].description }</em><br />
+            Temperature: { temp.temp } K<br /> 
+            Feels Like: { temp.feels_like } K<br />
             Lat: { coord.lat }<br />
             Lon: { coord.lon }<br />
-            Weather: { weather[0].description }<br />
-            Temperature: { temp.temp }<br />
-            Feels Like: { temp.feels_like }<br />
-            Humidity: { temp.humidity }
+            Humidity: { temp.humidity }%
         </p></>
         : null}    
   </div>
