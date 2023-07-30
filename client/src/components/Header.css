@@ -3,7 +3,7 @@
     
 }
 
-a:hover {
+.a:hover {
     /* border-bottom: 1px; */
     /* border-style: solid; */
     background-color: beige;
@@ -11,5 +11,13 @@ a:hover {
 }
 
 .title{
+    display: block;
     color: beige;
+    padding-right: 15px;
+    padding-top: 8px;
+    cursor: context-menu;
+}
+
+a {
+    text-decoration: none;
 }
