@@ -16,8 +16,9 @@ p{
     margin: auto;
 }
 
-#dsa{
+.dsa{
     cursor: pointer;
+    color: black;
 }
 
 form{

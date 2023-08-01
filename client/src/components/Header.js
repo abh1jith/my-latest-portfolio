@@ -8,7 +8,7 @@ function Header(){
     return <>
     <Navbar expand="lg" className=" nav nav-pills  py-3 bg-dark">
       <Container >
-        <h5 className="title disabled">Abhijith's Portfolio</h5>
+        <h5 className="title">ABHIJITH's PORTFOLIO</h5>
         {/* <Navbar.Brand className="title disabled">Abhijith's Portfolio</Navbar.Brand> */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" className="a"> \\\</Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">

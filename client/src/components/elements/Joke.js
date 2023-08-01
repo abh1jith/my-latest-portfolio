@@ -4,11 +4,13 @@ import Axios from "axios";
 
 function Joke(){
   
+  const [clicked, setClicked] = React.useState(false);
   const [setup, setSetup] = React.useState("");
   const [delivery, setDelivery] = React.useState("");
   const [show, setShow] = React.useState(true);
 
   function getJoke(){
+    setClicked(true);
     Axios.get("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=racist,sexist&type=twopart")
       .then((response) => {
           setSetup(response.data.setup);
@@ -22,11 +24,15 @@ function Joke(){
   }
     return <>
      <div className="card" style={{
-          width: 400}}>
+          width: 300}}>
         <div className="card-body">
           <button className="btn btn-secondary"
-                onClick={ getJoke }>Get a Joke</button>
+                onClick={ getJoke }>Wanna hear a Joke?</button>
           
+          {!clicked
+            ?<p style={{opacity:0.5}}className="text-body-secondary">Click &uarr;</p>
+            : null
+          }
           <p className="card-text">{ setup } </p>
           {!show
             ?<button className="btn btn-light" onClick={()=>{setShow(true)}} >Because</button>
