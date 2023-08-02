@@ -43,6 +43,11 @@ function Weather(){
             onChange={(event) => {
                 setCity(event.target.value)
             }}
+            onKeyDown={(event) => {
+                if(event.key === "Enter"){
+                    getWeatherData();
+                }
+            }}
         />
     <br />
     <br />
