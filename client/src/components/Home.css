@@ -11,6 +11,60 @@ p{
     font-family: sans-serif;
 }
 
+.projectImg{
+    display: flex;
+    height: 170px;
+    width: 200px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+
+
+.projectDiv{
+    display: block;
+    margin: 40px auto;
+    padding: 15px;
+    border: 2px solid #778899;
+    border-radius: 20px;
+    font-family: sans-serif;
+}
+
+.projectDiv:hover{
+    .projectImg{
+        border: 2px solid white;
+    }
+    color: aliceblue;
+    background-color: #778899;
+}
+
+.projectBtn1{
+    margin-left: auto;
+    margin-right: 0;
+    padding: 8px;
+    border: 0px;
+    border-radius: 20px;
+    background-color: blueviolet;
+    color: aliceblue;
+}
+.projectBtn2 {
+    font-size: 12px;
+    /* margin-left: 70px; */
+    padding: 8px;
+    border: 0px;
+    border-radius: 20px;
+    background-color: #ADD;
+    color: black;
+}
+.projectBtn1:hover{
+    background-color: #ADD;
+    color: black;
+}
+.projectBtn2:hover{
+    background-color: blueviolet;
+    color: aliceblue;
+}
+
 #iframe{
     display: block;
     margin: auto;
