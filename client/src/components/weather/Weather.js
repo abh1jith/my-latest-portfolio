@@ -34,12 +34,12 @@ function Weather(){
     <br />
     <br />
     <div className="card" style={{
-          width: 250}}>
+          width: 300}}>
   <div className="card-body">
     <h5 className="card-title">Know your weather</h5>
     <input 
             name="cityName"
-            placeholder="London"
+            placeholder="Enter city-name"
             onChange={(event) => {
                 setCity(event.target.value)
             }}
