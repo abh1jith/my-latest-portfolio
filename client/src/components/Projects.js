@@ -1,20 +1,25 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Axios from "axios";
 
 import "./Home.css";
 import ProjectComp from "./elements/ProjectComp";
 
 function Projects(){
-    const [projectList, setProjectList] = React.useState([
-        {title: "Project 1",
-         content: "Content 1",
-         img: "src",
-         demo: "demo"}, 
-        {title: "Project 2",
-         content: "Content 2",
-         img: "src",
-         demo: "demo"} 
-    ]);
+    const [projectList, setProjectList] = React.useState([]);
+
+
+    React.useEffect(()=>{
+        Axios.get("http://localhost:3001/getProjects")
+            .then((response) => {
+                setProjectList(response.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+    }, []);
+
 
     return <>
     <div className = "d-flex flex-column min-vh-100">
@@ -23,11 +28,13 @@ function Projects(){
         <div className="container">
             <div className="row">
                 {projectList.map((project) => {
-                    return <div className="col-xs-12 col-sm-6 col-md-4 col-lg-3"><ProjectComp 
+                    return <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3"><ProjectComp 
                                                                             title = { project.title }
+                                                                            techStack = { project.techStack }
                                                                             content = { project.content }
-                                                                            img = { project.img }
+                                                                            imgUrl = { project.imgUrl }
                                                                             demo = { project.demo }
+                                                                            github = { project.github }
                                                                             />
                     </div>
                 })}
