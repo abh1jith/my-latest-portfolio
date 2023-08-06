@@ -12,7 +12,7 @@ function ProfileViews(){
             .catch((err) => {console.log(err);});
     }, []);
 
-    return  <h1>{ count[0].userCount } </h1>;
+    return  <p> Profile Visits: { count[0].userCount } </p>;
 };
 
 export default ProfileViews;
