@@ -1,13 +1,25 @@
-.a{
+.HeaderParts{
     color: white;
-    
+    font-family: Monospace;
 }
 
-.a:hover {
-    /* border-bottom: 1px; */
-    /* border-style: solid; */
+.HeaderParts:hover {
     background-color: beige;
     transition: 0.3s;
+}
+
+.HeaderDiv {
+    padding-left: 700px;
+}
+@media screen and (max-width: 1400px) and (min-width: 1200px) {
+    .HeaderDiv {
+        padding-left: 550px;
+    }
+}
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+    .HeaderDiv {
+            padding-left: 350px;
+        }
 }
 
 .title{

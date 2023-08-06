@@ -1,6 +1,7 @@
 .name{
     display: flex;
     justify-content: center;
+    font-family: Monospace;
 }
 
 a{
@@ -10,16 +11,7 @@ a{
 p{
     font-family: sans-serif;
 }
-/* only screen and (max-width: 1399.98px) and */
-/* @media  (min-width: 570px) and (max-width: 770px) {
-    .projectImg{
-        display: flex;
-        border-radius: 50%;
-        height: 15px;
-        width: 15px;
-        margin: auto;
-    }
-} */
+
 
 .projectImg{
     display: flex;
@@ -27,7 +19,6 @@ p{
     width: 200px;
     margin: 10px auto;
 }
-
 
 
 .projectDiv{
