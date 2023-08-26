@@ -2,11 +2,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+const PORT = process.env.PORT || 3001;
+
 const app = express();
 
 app.use(cors());
+require('dotenv').config();
 
-mongoose.connect("mongodb://127.0.0.1:27017/portfolio");
+mongoose.connect(process.env.MONGO_URL)
 
 const CountSchema = mongoose.Schema({"_id": String, 
                                     userCount: Number});
@@ -47,6 +50,6 @@ app.get("/getCount", function(req, res){
         });
 });
 
-app.listen(3001, ()=>{
+app.listen(PORT, ()=>{
     console.log("Express is running on port: 3001");
 });
