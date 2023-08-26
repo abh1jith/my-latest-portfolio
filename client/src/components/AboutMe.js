@@ -6,6 +6,7 @@ function AboutMe() {
     const [showResume, setShowResume] = React.useState(false);
 
     return <div className = "d-flex flex-column min-vh-100">
+    <br /><br />
         <h1> Namaste🙏! </h1><br />
         <p> I'm Abhijith Dameruppala, a highly motivated <mark>Data Science graduate student</mark> with a strong interest in Software Engineering. </p>
         <p>Currently pursuing a Master's degree in Data Science at <mark><a href="https://bloomington.iu.edu/index.html" target="_blank" rel="noopener noreferrer">Indiana University - Bloomington</a></mark>, I am eager to graduate in May 2024. 
